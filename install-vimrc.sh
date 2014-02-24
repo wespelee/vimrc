@@ -1,9 +1,8 @@
 #!/bin/sh
-cd ..
-ln -s .vim/vimrc .vimrc
-ln -s .vim/gvimrc .gvimrc
+ln -s `pwd` ~/.vim
+ln -s $HOME/.vim/vimrc $HOME/.vimrc
+ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
 
 # xmledit
-cd .vim/bundle/xmledit/ftplugin/
-ln -s xml.vim html.vim
-ln -s xml.vim xhtml.vim
+ln -s $HOME/.vim/bundle/xmledit/ftplugin/xml.vim $HOME/.vim/bundle/xmledit/ftplugin/html.vim
+ln -s $HOME/.vim/bundle/xmledit/ftplugin/xml.vim $HOME/.vim/bundle/xmledit/ftplugin/xhtml.vim

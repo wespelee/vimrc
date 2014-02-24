@@ -327,3 +327,21 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw! " recompile c
 
 " --- vim-gitgutter
 let g:gitgutter_enabled = 1
+
+
+" -- set nocscopeverbose " suppress 'duplicate connection' error
+function! LoadCscope()
+    let db = findfile("cscope.out", ".;")
+    if (!empty(db))
+        let path = strpart(db, 0, match(db, "/cscope.out$"))
+        set nocscopeverbose " suppress 'duplicate connection' error
+        exe "cs add " . db . " " . path
+        set cscopeverbose
+    endif
+endfunction
+au BufEnter /* call LoadCscope()
+
+" -- Type "e %%/" for expand current directory
+" cabbr <expr> %% expand('%:p:h')
+" Use \e key combination
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
