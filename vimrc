@@ -75,8 +75,9 @@ set tm=500
 
 " TAB setting{
    set expandtab        "replace <TAB> with spaces
-   set softtabstop=3 
-   set shiftwidth=3 
+   set softtabstop=4 
+   set shiftwidth=4 
+   set tabstop=4
 
    au FileType Makefile set noexpandtab
 "}      							
@@ -345,3 +346,74 @@ au BufEnter /* call LoadCscope()
 " cabbr <expr> %% expand('%:p:h')
 " Use \e key combination
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" My Style
+" Set line number
+set nu
+" highlight
+set cursorline
+" scroll jump
+set sj=1
+" scroll off
+set so=6
+" Command mode tab completion
+set  wildmode=longest,list
+set  wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.ncb,*.opt,*.plg,.svn,.git
+" set wildoptions
+set  winaltkeys=no
+
+set modeline
+set mat=15
+set ruler is nowrap ai si hls sm bs=indent,eol,start 
+set ff=unix
+
+" encoding solutions
+set fencs=utf-8,big5,euc-jp,utf-bom,iso8859-1
+set fenc=utf-8 enc=utf-8 tenc=utf-8
+
+" save view
+autocmd  BufWinLeave *.*			silent mkview
+autocmd  BufWinEnter *.*			silent loadview
+
+" easytab
+nm			<tab> v>
+nm			<s-tab> v<
+xmap		<tab> >gv
+xmap		<s-tab> <gv
+
+" command mode mapping:
+" command line jump to head , end
+cm      <c-a>   <home>
+cm      <c-e>   <end>
+
+" back one character:
+cno  <c-b>      <left>
+cno  <c-d>      <del>
+cno  <c-f>      <right>
+cno  <c-n>      <down>
+cno  <c-p>      <up>
+
+if &diff
+    highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white
+    highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
+    highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
+    highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+endif
+
+set nocscopeverbose " suppress 'duplicate connection' error
+function! LoadCscope()
+    let db = findfile("cscope.out", ".;")
+    if (!empty(db))
+        let path = strpart(db, 0, match(db, "/cscope.out$"))
+        set nocscopeverbose " suppress 'duplicate connection' error
+        exe "cs add " . db . " " . path
+        set cscopeverbose
+    endif
+endfunction
+au BufEnter /* call LoadCscope()
+
+" Type "e %%/" for expand current directory
+" cabbr <expr> %% expand('%:p:h')
+" Use \e key combination
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
