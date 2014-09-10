@@ -159,10 +159,11 @@ map <S-H> gT
 " go to next tab
 map <S-L> gt
 
+" Remark this. Cause cscope ctrl-t slow.
 " new tab
-map <C-t><C-t> :tabnew<CR>
+"map <C-t><C-t> :tabnew<CR>
 " close tab
-map <C-t><C-w> :tabclose<CR> 
+"map <C-t><C-w> :tabclose<CR> 
 
 " ,/ turn off search highlighting
 nmap <leader>/ :nohl<CR>
