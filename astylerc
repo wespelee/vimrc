@@ -1,0 +1,13 @@
+--style=kr
+--indent=spaces=4
+--indent-preprocessor
+--break-blocks
+--convert-tabs
+--break-closing-brackets
+--pad-oper
+--pad-header
+--unpad-paren
+--suffix=none
+--indent-switches
+--align-pointer=name
+--max-code-length=80
