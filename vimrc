@@ -400,6 +400,7 @@ au BufEnter /* call LoadCscope()
 " Use \e key combination
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>v :vs <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>t :tabnew <C-R>=expand('%:p:h') . '/'<CR>
 
 " Move line up or down
 nmap <C-j> :.m.+1<CR>
