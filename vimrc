@@ -402,9 +402,17 @@ nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>v :vs <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>t :tabnew <C-R>=expand('%:p:h') . '/'<CR>
 
+nnoremap <Leader>s :cs find s  
+nnoremap <Leader>f :cs find f
+
 " Move line up or down
 nmap <C-j> :.m.+1<CR>
 nmap <C-k> :.m.-2<CR>
 
 " gq to activate
 set formatprg=astyle
+
+if has('clipboard')	" GUI color and font settings
+    set clipboard=unnamed
+    set clipboard=unnamedplus
+endif
