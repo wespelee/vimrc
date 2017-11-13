@@ -1,4 +1,6 @@
 #!/bin/sh
+
+wget https://tpo.pe/pathogen.vim -P autoload/
 ln -nfs `pwd` ~/.vim
 ln -nfs $HOME/.vim/vimrc $HOME/.vimrc
 ln -nfs $HOME/.vim/gvimrc $HOME/.gvimrc
