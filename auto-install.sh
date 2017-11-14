@@ -16,7 +16,8 @@ die() {
 
 git clone git://github.com/vgod/vimrc.git "$VIMHOME"
 cd "$VIMHOME"
-git submodule update --init
+
+git submodule update --recursive --remote --init
 
 ./install-vimrc.sh
 
