@@ -32,7 +32,7 @@
 	path = bundle/indent-motion
 	url = https://github.com/vim-scripts/indent-motion.git
 [submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmat
+	path = bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
