@@ -10,4 +10,7 @@
 --suffix=none
 --indent-switches
 --align-pointer=name
+--align-reference=name
 --max-code-length=80
+--min-conditional-indent=0
+--pad-comma
