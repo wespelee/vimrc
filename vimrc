@@ -1,22 +1,3 @@
-" vgod's vimrc
-" Tsung-Hsiang (Sean) Chang <vgod@vgod.tw>
-" Fork me on GITHUB  https://github.com/vgod/vimrc
-
-" read https://github.com/vgod/vimrc/blob/master/README.md for more info
-
-
-" For pathogen.vim: auto load all plugins in .vim/bundle
-
-let g:pathogen_disabled = []
-if !has('gui_running')
-   call add(g:pathogen_disabled, 'powerline')
-endif
-
-execute pathogen#infect()
-" Previous pathogen
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
-
 " General Settings
 
 set nocompatible	" not compatible with the old-fashion vi mode
@@ -425,3 +406,28 @@ endif
 " let GtagsCscope_Auto_Load = 1
 " let GtagsCscope_Auto_Map = 1
 " let GtagsCscope_Quiet = 1
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'https://github.com/Townk/vim-autoclose.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/vim-scripts/YankRing.vim.git'
+Plug 'https://github.com/vim-scripts/OmniCppComplete.git'
+Plug 'https://github.com/scrooloose/nerdtree.git', { 'on':  'NERDTreeToggle' }
+Plug 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/easymotion/vim-easymotion.git'
+Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/Lokaltog/vim-powerline.git'
+Plug 'https://github.com/pangloss/vim-javascript.git'
+Plug 'https://github.com/vim-scripts/indent-motion.git'
+Plug 'https://github.com/garbas/vim-snipmate.git'
+Plug 'https://github.com/tomtom/tlib_vim.git'
+Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
+Plug 'https://github.com/mileszs/ack.vim.git'
+Plug 'https://github.com/airblade/vim-gitgutter.git'
+Plug 'https://github.com/honza/vim-snippets.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+" Initialize plugin system
+call plug#end()
