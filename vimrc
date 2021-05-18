@@ -429,5 +429,6 @@ Plug 'https://github.com/mileszs/ack.vim.git'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/honza/vim-snippets.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'ntpeters/vim-better-whitespace'
 " Initialize plugin system
 call plug#end()
